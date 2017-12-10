@@ -13,6 +13,7 @@ class ProductListTableViewController: UITableViewController {
     
     var titleView: TitleView!
     var refresh: UIRefreshControl!
+    let queue = DispatchQueue.global(qos: .utility)
     
 
     var topicSearchService = TopicSearchService(requestSender: RequestSender())
@@ -87,7 +88,27 @@ class ProductListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "product", for: indexPath) as! ProductListCell
         // Configure the cell...
-        cell.nameLabel.text = products[indexPath.row].name
+        let currentProduct = products[indexPath.row]
+        cell.nameLabel.text = currentProduct.name
+        cell.thumbNailImage.image = currentProduct.preloadedThumbnail
+        
+        
+        if products[indexPath.row].preloadedThumbnail == nil {
+            queue.async {
+                guard  let imageData = try? Data(contentsOf: self.products[indexPath.row].thumbnailURL) else {
+                    print("no URL or Data")
+                    return
+                }
+                
+                DispatchQueue.main.async {
+                    if let image = UIImage(data: imageData) {
+                        currentProduct.preloadedThumbnail = image
+                    }
+                    tableView.reloadRows(at: [indexPath], with: .automatic)
+                }
+                
+            }
+        }
         //cell.descriptionLabel.text = products[indexPath.row].description
 
         return cell

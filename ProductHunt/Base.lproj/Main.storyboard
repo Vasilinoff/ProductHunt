@@ -26,9 +26,9 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHF-wV-a1b">
-                                            <rect key="frame" x="5" y="5" width="50" height="16"/>
+                                            <rect key="frame" x="5" y="5" width="250" height="16"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="50" id="o5D-J0-Tmt"/>
+                                                <constraint firstAttribute="width" constant="250" id="o5D-J0-Tmt"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <nil key="textColor"/>
@@ -44,7 +44,11 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DCu-z3-cLC">
-                                            <rect key="frame" x="272" y="0.0" width="63" height="44"/>
+                                            <rect key="frame" x="272" y="0.0" width="50" height="50"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="50" id="Nx9-ds-qYA"/>
+                                                <constraint firstAttribute="height" constant="50" id="Wp0-sS-wAL"/>
+                                            </constraints>
                                         </imageView>
                                     </subviews>
                                     <constraints>
@@ -53,9 +57,7 @@
                                         <constraint firstItem="DCu-z3-cLC" firstAttribute="top" secondItem="xD5-Ol-ZQ0" secondAttribute="top" id="8M3-53-8HF"/>
                                         <constraint firstItem="qV1-AG-9jQ" firstAttribute="leading" secondItem="xD5-Ol-ZQ0" secondAttribute="leading" constant="5" id="dFY-m8-ZJ5"/>
                                         <constraint firstItem="DCu-z3-cLC" firstAttribute="leading" secondItem="qV1-AG-9jQ" secondAttribute="trailing" constant="17" id="nYe-y8-9F8"/>
-                                        <constraint firstAttribute="bottom" secondItem="DCu-z3-cLC" secondAttribute="bottom" id="qZX-Rc-c5s"/>
                                         <constraint firstAttribute="bottom" secondItem="qV1-AG-9jQ" secondAttribute="bottom" constant="0.5" id="rBO-Cw-2X2"/>
-                                        <constraint firstAttribute="trailing" secondItem="DCu-z3-cLC" secondAttribute="trailing" constant="40" id="vLB-kc-6c3"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
