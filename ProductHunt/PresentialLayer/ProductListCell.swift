@@ -12,4 +12,5 @@ class ProductListCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var thumbNailImage: UIImageView!
+    @IBOutlet weak var upvotesLabel: UILabel!
 }
